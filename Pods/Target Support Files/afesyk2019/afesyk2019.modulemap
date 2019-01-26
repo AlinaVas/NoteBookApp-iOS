@@ -1,0 +1,6 @@
+framework module afesyk2019 {
+  umbrella header "afesyk2019-umbrella.h"
+
+  export *
+  module * { export * }
+}

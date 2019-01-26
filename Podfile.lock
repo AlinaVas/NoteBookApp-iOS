@@ -1,0 +1,16 @@
+PODS:
+  - afesyk2019 (0.1.0)
+
+DEPENDENCIES:
+  - afesyk2019 (from `Pods/afesyk2019`)
+
+EXTERNAL SOURCES:
+  afesyk2019:
+    :path: Pods/afesyk2019
+
+SPEC CHECKSUMS:
+  afesyk2019: 280a617a415debf8c180ba808505e6561e789dbc
+
+PODFILE CHECKSUM: ca84c5c48fe48063726dd6206933430ad5ba85a8
+
+COCOAPODS: 1.5.3

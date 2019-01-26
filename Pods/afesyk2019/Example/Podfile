@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'afesyk2019_Example' do
+  pod 'afesyk2019', :path => '../'
+
+  target 'afesyk2019_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

@@ -1,0 +1,22 @@
+{
+  "name": "afesyk2019",
+  "version": "0.1.0",
+  "summary": "A short description of afesyk2019.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/alinavas/afesyk2019",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "alinavas": "afesyk@student.unit.ua"
+  },
+  "source": {
+    "git": "https://github.com/alinavas/afesyk2019.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "afesyk2019/Classes/**/*"
+}
