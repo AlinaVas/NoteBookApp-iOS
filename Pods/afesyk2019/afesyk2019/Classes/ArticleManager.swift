@@ -56,7 +56,6 @@ public class ArticleManager: NSObject {
             return result
         }
         catch {
-            //fatalError("Failed to fetch article")
             print("Failed to fetch article")
             return []
         }

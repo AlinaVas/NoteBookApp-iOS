@@ -17,17 +17,19 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        // set background
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "bg_1")
-        backgroundImage.contentMode = UIViewContentMode.scaleAspectFill
+        backgroundImage.image = UIImage(named: "launchImg")
+        backgroundImage.contentMode = .scaleToFill
         self.view.insertSubview(backgroundImage, at: 0)
         
+        // authenticate
         if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: nil) {
             context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "You need to be authorized") {
                 (success, error) in
                 DispatchQueue.main.async {
                     if success {
-                        self.performSegue(withIdentifier: "enterApp", sender: self)
+                        self.performSegue(withIdentifier: "toHome", sender: self)
                     }
                     else {
                         print(error!.localizedDescription)

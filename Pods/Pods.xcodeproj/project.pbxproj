@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -36,27 +36,27 @@
 		1C1EC0273E47CD1BCC406D492037785F /* Pods-D09-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-D09-umbrella.h"; sourceTree = "<group>"; };
 		1D607AD9B34FA88E9A51C567A977B9C1 /* Article.xcdatamodel */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcdatamodel; path = Article.xcdatamodel; sourceTree = "<group>"; };
 		1E19A6023A9D488D0D86016A85FBC16B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		20E9E236C7A7E70F6B99A4BC7401DBF1 /* afesyk2019.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = afesyk2019.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		20E9E236C7A7E70F6B99A4BC7401DBF1 /* afesyk2019.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = afesyk2019.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		27AA26547F61D60F87F0718A27FB63C9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		288BEB8D3630F795DB9CA601250781A9 /* Pods-D09.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-D09.modulemap"; sourceTree = "<group>"; };
 		29AA4C386BECA9AF7BEEF4CDE9267CB1 /* Pods-D09.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-D09.debug.xcconfig"; sourceTree = "<group>"; };
-		34713EDFE733A3E584EEBC32C8FCEEE7 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		3E52B43CE19D4843AEC22A402287D077 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		34713EDFE733A3E584EEBC32C8FCEEE7 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		3E52B43CE19D4843AEC22A402287D077 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		45D5778FD19931930D7E6D0FBD262580 /* Pods-D09-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-D09-dummy.m"; sourceTree = "<group>"; };
 		6633C49B3A7C68335D63C2AF9ADC20A0 /* afesyk2019-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "afesyk2019-prefix.pch"; sourceTree = "<group>"; };
 		87080A1E0FF1899DBEEDA573E048508B /* ArticleManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ArticleManager.swift; path = afesyk2019/Classes/ArticleManager.swift; sourceTree = "<group>"; };
 		8B440A5C5DA8E47692213CEFBD01BF92 /* Pods-D09.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-D09.release.xcconfig"; sourceTree = "<group>"; };
 		8C720608A8387ED0A47B887FA7DC1595 /* afesyk2019.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = afesyk2019.xcconfig; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		98826B1B0CE137B8D2A4CA65B01D415C /* afesyk2019-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "afesyk2019-dummy.m"; sourceTree = "<group>"; };
 		A6BAA603C7E4916B54E916E3859E7425 /* Pods-D09-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-D09-acknowledgements.plist"; sourceTree = "<group>"; };
 		AEA8D7718649A1DFF8D13ABE9285AE31 /* Pods-D09-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-D09-frameworks.sh"; sourceTree = "<group>"; };
 		D7CF24B46A5992ABF79DA68D5EDA3A42 /* Pods-D09-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-D09-acknowledgements.markdown"; sourceTree = "<group>"; };
 		E44DAFEE8EA9F6C9EF267804B281A5E7 /* afesyk2019.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = afesyk2019.modulemap; sourceTree = "<group>"; };
 		E5241888B5979E9EC16EEBFE80296BD0 /* afesyk2019-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "afesyk2019-umbrella.h"; sourceTree = "<group>"; };
-		E6F6C11402002996E00D212D1DA00E4A /* afesyk2019.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = afesyk2019.framework; path = afesyk2019.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6F6C11402002996E00D212D1DA00E4A /* afesyk2019.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = afesyk2019.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8C2D71EB77F1D2104345E645BA8F9F6 /* Pods-D09-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-D09-resources.sh"; sourceTree = "<group>"; };
-		FDB115FD61AE3F390A7C6069D51A56E5 /* Pods_D09.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_D09.framework; path = "Pods-D09.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDB115FD61AE3F390A7C6069D51A56E5 /* Pods_D09.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_D09.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +122,6 @@
 				6825A4EF3BDFBA6AA2D22F76334472AB /* Resources */,
 				C9BD60D3EFB107436302991B06069E92 /* Support Files */,
 			);
-			name = afesyk2019;
 			path = afesyk2019;
 			sourceTree = "<group>";
 		};
@@ -263,6 +262,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
+				TargetAttributes = {
+					1D6BCFDE234237C4E26E43F2CF5C6156 = {
+						LastSwiftMigration = 1010;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -355,7 +359,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0.1;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -386,7 +390,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0.1;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -449,8 +453,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -629,6 +632,7 @@
 			children = (
 				1D607AD9B34FA88E9A51C567A977B9C1 /* Article.xcdatamodel */,
 			);
+			currentVersion = 1D607AD9B34FA88E9A51C567A977B9C1 /* Article.xcdatamodel */;
 			name = Article.xcdatamodeld;
 			path = afesyk2019/Assets/Article.xcdatamodeld;
 			sourceTree = "<group>";
