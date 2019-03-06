@@ -22,8 +22,8 @@ struct articleParser {
         if let data = article.image as Data? {
             image = UIImage(data: data)
         }
-        creationDate = dateToString(article.creationDate)
-        modificationDate = dateToString(article.modificationDate)
+        creationDate = "Created: " + (dateToString(article.creationDate) ?? "")
+        modificationDate = "Modified: " + (dateToString(article.modificationDate) ?? "")
     }
     
     func dateToString(_ date: NSDate?) -> String? {
@@ -31,6 +31,6 @@ struct articleParser {
         
         let  dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE, MMMM dd, yyyy 'at' hh:mm:ss a"
-        return "Created: " + dateFormatter.string(from: date! as Date)
+        return dateFormatter.string(from: date! as Date)
     }
 }

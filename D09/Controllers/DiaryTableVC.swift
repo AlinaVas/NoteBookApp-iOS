@@ -24,10 +24,26 @@ class DiaryTableViewController: UITableViewController {
         show(articleVC, sender: self)
     }
     
+    override func loadView() {
+        super.loadView()
+        
+        let rect = CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: self.view.bounds.size.width, height: self.view.bounds.size.height))
+        emptyDiaryLabel = UILabel(frame: rect)
+        emptyDiaryLabel.text = "Diary is empty so far"
+        emptyDiaryLabel.numberOfLines = 0;
+        emptyDiaryLabel.textAlignment = .center;
+        emptyDiaryLabel.font = UIFont(name: "TrebuchetMS", size: 17)
+        emptyDiaryLabel.backgroundColor = #colorLiteral(red: 0.9293201566, green: 0.9294758439, blue: 0.9292996526, alpha: 1)
+        emptyDiaryLabel.sizeToFit()
+        
+        self.tableView.backgroundView = emptyDiaryLabel;
+        self.tableView.tableFooterView = UIView()
+        self.tableView.separatorInset = .zero
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        emptyDiaryView()
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableView.automaticDimension
     }
@@ -41,29 +57,17 @@ class DiaryTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    
-    func emptyDiaryView() {
-        let rect = CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: self.view.bounds.size.width, height: self.view.bounds.size.height))
-        emptyDiaryLabel = UILabel(frame: rect)
-        emptyDiaryLabel.text = "Diary is empty so far"
-        emptyDiaryLabel.numberOfLines = 0;
-        emptyDiaryLabel.textAlignment = .center;
-        emptyDiaryLabel.font = UIFont(name: "TrebuchetMS", size: 17)
-        emptyDiaryLabel.sizeToFit()
-        
-        self.tableView.backgroundView = emptyDiaryLabel;
-        self.tableView.separatorStyle = .none;
-    }
     
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         if articles.isEmpty {
             emptyDiaryLabel.isHidden = false
+            self.tableView.separatorStyle = .none;
             return 0
         } else {
             emptyDiaryLabel.isHidden = true
+            self.tableView.separatorStyle = .singleLine;
             return 1
         }
     }
