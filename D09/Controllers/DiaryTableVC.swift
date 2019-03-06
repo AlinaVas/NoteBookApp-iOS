@@ -34,7 +34,6 @@ class DiaryTableViewController: UITableViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         articles = articleManager.getAllArticles().reversed()
-        print("viewWillAppear")
         self.tableView.reloadData()
     }
     
@@ -60,25 +59,20 @@ class DiaryTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        print("SECTIONS---------------------------------------------------------------")
         if articles.isEmpty {
-            print("emptyyy")
-//            emptyDiaryLabel.isHidden = false
+            emptyDiaryLabel.isHidden = false
             return 0
         } else {
-            print("not emptyyyy")
-//            emptyDiaryLabel.isHidden = true
+            emptyDiaryLabel.isHidden = true
             return 1
         }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("ROWS+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
         return articles.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("display cell...")
         if articles[indexPath.row].image != nil {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "cellWithImage", for: indexPath) as? CellWithImage {
                 cell.article = articles[indexPath.row]
@@ -104,10 +98,15 @@ class DiaryTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            print("deleting...")
             articleManager.removeArticle(article: articles.remove(at: indexPath.row))
             articleManager.save()
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            if tableView.numberOfRows(inSection: indexPath.section) > 1 {
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            } else {
+                tableView.deleteSections([indexPath.section], with: .fade)
+            }
+            
         }
     }
 
