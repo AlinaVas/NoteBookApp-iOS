@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--First View Controller-->
+        <!--AuthenticationVC-->
         <scene sceneID="uoa-u3-yd1">
             <objects>
-                <viewController id="k9Y-f0-xp9" customClass="FirstViewController" customModule="D09" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="k9Y-f0-xp9" customClass="AuthenticationVC" customModule="D09" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Eoo-hZ-0g1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,7 +31,7 @@
         <!--Diary-->
         <scene sceneID="kNY-qr-wRV">
             <objects>
-                <tableViewController id="pO9-Qz-qC0" customClass="DiaryTableViewController" customModule="D09" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="pO9-Qz-qC0" customClass="ArticleListVC" customModule="D09" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="500" sectionHeaderHeight="28" sectionFooterHeight="28" id="U3F-fh-AEt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

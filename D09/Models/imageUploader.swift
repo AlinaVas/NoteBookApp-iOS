@@ -12,8 +12,8 @@ import AVFoundation
 
 class ImageUploader: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    unowned let viewController: ArticleVC
     let imagePicker: UIImagePickerController
-    let viewController: ArticleVC
     
     init(to viewController: ArticleVC) {
         imagePicker = UIImagePickerController()
@@ -27,7 +27,7 @@ class ImageUploader: NSObject, UIImagePickerControllerDelegate, UINavigationCont
         fatalError("init(coder:) has not been implemented")
     }
     
-    func selectImageFrom(_ source: UIImagePickerController.SourceType) {
+    fileprivate func selectImageFrom(_ source: UIImagePickerController.SourceType) {
         imagePicker.sourceType = source
         viewController.present(imagePicker, animated: true, completion: nil)
     }
@@ -75,7 +75,7 @@ class ImageUploader: NSObject, UIImagePickerControllerDelegate, UINavigationCont
         }
     }
     
-    func pickImage() {
+    fileprivate func pickImage() {
         imagePicker.sourceType = .photoLibrary
         viewController.present(imagePicker, animated: true, completion: nil)
     }

@@ -9,23 +9,26 @@
 import UIKit
 import LocalAuthentication
 
-class FirstViewController: UIViewController {
+class AuthenticationVC: UIViewController {
 
     let context = LAContext()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    override func loadView() {
+        super.loadView()
         
-        // set background
+        // set background image
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "launchImg")
         backgroundImage.contentMode = .scaleToFill
         self.view.insertSubview(backgroundImage, at: 0)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        // authenticate
+        // authenticate user
         if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: nil) {
-            context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "You need to be authorized") {
+            context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "You need to be authorized") { [unowned self]
                 (success, error) in
                 DispatchQueue.main.async {
                     if success {
@@ -38,11 +41,5 @@ class FirstViewController: UIViewController {
             }
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 }
 

@@ -9,20 +9,13 @@
 import UIKit
 import afesyk2019
 
-class DiaryTableViewController: UITableViewController {
+class ArticleListVC: UITableViewController {
 
-    let articleManager = ArticleManager()
-    var articles: [Article] = []
-    let articleVCIdentifier = "ArticleVC"
-    
     var emptyDiaryLabel: UILabel!
     
-    @IBAction func plusBtn(_ sender: Any) {
-        let articleVC = storyboard?.instantiateViewController(withIdentifier: articleVCIdentifier) as! ArticleVC
-        articleVC.articleManager = articleManager
-        articleVC.articles = articles
-        show(articleVC, sender: self)
-    }
+    let articleVCIdentifier = "ArticleVC"
+    let articleManager = ArticleManager()
+    var allArticles: [Article] = []
     
     override func loadView() {
         super.loadView()
@@ -43,25 +36,43 @@ class DiaryTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        tableView.estimatedRowHeight = 100
-        tableView.rowHeight = UITableView.automaticDimension
+        
+        self.tableView.estimatedRowHeight = 100
+        self.tableView.rowHeight = UITableView.automaticDimension
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
-        articles = articleManager.getAllArticles().reversed()
+        allArticles = articleManager.getAllArticles().reversed()
         self.tableView.reloadData()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    fileprivate func openArticleVC(with article: Article? = nil) {
+        let articleVC = storyboard?.instantiateViewController(withIdentifier: articleVCIdentifier) as! ArticleVC
+        articleVC.article = article
+        articleVC.articleManager = articleManager
+        articleVC.allArticles = allArticles
+        show(articleVC, sender: self)
     }
     
-    // MARK: - Table view data source
+    @IBAction func plusBtn(_ sender: Any) {
+        openArticleVC()
+    }
+}
+
+// MARK: - UITableViewDelegate
+extension ArticleListVC {
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard allArticles.count != 0 else {return}
+        openArticleVC(with: allArticles[indexPath.row])
+    }
+}
+
+// MARK: - UITableViewDataSource
+extension ArticleListVC {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        if articles.isEmpty {
+        if allArticles.isEmpty {
             emptyDiaryLabel.isHidden = false
             self.tableView.separatorStyle = .none;
             return 0
@@ -73,36 +84,27 @@ class DiaryTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return articles.count
+        return allArticles.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if articles[indexPath.row].image != nil {
+        if allArticles[indexPath.row].image != nil {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "cellWithImage", for: indexPath) as? CellWithImage {
-                cell.article = articles[indexPath.row]
+                cell.article = allArticles[indexPath.row]
                 return cell
             }
         } else {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? Cell {
-                cell.article = articles[indexPath.row]
+                cell.article = allArticles[indexPath.row]
                 return cell
             }
         }
         return CellWithImage()
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard articles.count != 0 else {return}
-        
-        let editVC = storyboard?.instantiateViewController(withIdentifier: articleVCIdentifier) as! ArticleVC
-        editVC.article = articles[indexPath.row]
-        editVC.articleManager = articleManager
-        show(editVC, sender: self)
-    }
-    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            articleManager.removeArticle(article: articles.remove(at: indexPath.row))
+            articleManager.removeArticle(article: allArticles.remove(at: indexPath.row))
             articleManager.save()
             
             if tableView.numberOfRows(inSection: indexPath.section) > 1 {
@@ -113,5 +115,4 @@ class DiaryTableViewController: UITableViewController {
             
         }
     }
-
 }
