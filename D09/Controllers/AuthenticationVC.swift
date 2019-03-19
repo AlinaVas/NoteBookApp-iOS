@@ -13,20 +13,21 @@ class AuthenticationVC: UIViewController {
 
     let context = LAContext()
     
-    override func loadView() {
-        super.loadView()
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        // set background image
+        setView()
+        authenticateUser()
+    }
+    
+    fileprivate func setView() {
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "launchImg")
         backgroundImage.contentMode = .scaleToFill
         self.view.insertSubview(backgroundImage, at: 0)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // authenticate user
+    fileprivate func authenticateUser() {
         if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: nil) {
             context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "You need to be authorized") { [unowned self]
                 (success, error) in
